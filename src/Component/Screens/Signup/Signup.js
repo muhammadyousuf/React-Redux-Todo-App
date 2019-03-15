@@ -19,7 +19,7 @@ class Signup extends Component {
             <div >
                 <Form onSubmit={this.handleSubmit} className="login-form">
                     <Form.Item>
-                        {getFieldDecorator('userName', {
+                        {getFieldDecorator('email', {
                             rules: [{ required: true, message: 'Please input your username!' }],
                         })(
                             <Input prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="Username" />
@@ -41,7 +41,7 @@ class Signup extends Component {
                         )}
                         <a className="login-form-forgot" href="/Login">Forgot password</a>
                         <Button type="primary" htmlType="submit" className="login-form-button">
-                            Log in
+                            Log in 
           </Button>
                         Or <a href="/Login">register now!</a>
                     </Form.Item>

@@ -4,6 +4,7 @@ import {
 } from 'antd';
 import {withRouter} from 'react-router-dom';
 import {reset} from '../../Function/function';
+import Navbar from '../Navbar/Navbar';
 
 
 class Signup extends Component {
@@ -20,10 +21,12 @@ class Signup extends Component {
         });
     }
   
+  
     render() {
         const { getFieldDecorator } = this.props.form;
         return (
             <div >
+                <Navbar />
                 <Form onSubmit={this.handleSubmit} className="login-form">
                 <Form.Item>
                         {getFieldDecorator('firstname', {

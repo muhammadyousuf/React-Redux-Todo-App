@@ -5,7 +5,7 @@ import {
 
 import {withRouter} from 'react-router-dom';
 import {reset} from '../../Function/function';
-
+import Navbar from '../Navbar/Navbar';
 
 
 class Login extends Component {
@@ -23,7 +23,7 @@ class Login extends Component {
                    localStorage.setItem('token','abc12345')
                    localStorage.setItem('name',user)
                    reset(this.props);
-                   this.props.history.push('/Dashboard')
+                   this.props.history.push('/ADDTODO')
                }
             }
         });
@@ -33,6 +33,7 @@ class Login extends Component {
         const { getFieldDecorator } = this.props.form;
         return (
             <div >
+                <Navbar />
                 <Form onSubmit={this.handleSubmit} className="login-form">
                     <Form.Item>
                         {getFieldDecorator('email', {

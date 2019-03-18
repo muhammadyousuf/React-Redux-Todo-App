@@ -7,9 +7,9 @@ import {
 
 import Login from '../Component/Screens/Login';
 import Signup from '../Component/Screens/Signup';
-import Dashboard from '../Component/Screens/Dashboard/Dashboard';
-import HoverIncrement from '../Component/Screens/Hover-Increment/Hover-Increment';
-import ButtonIncrement from '../Component/Screens/Button-Increment/Button-Increment';
+import ADDTODO from '../Component/Screens/ADD TODO';
+import HoverIncrement from '../Component/Screens/HOVER INCREMENT/Hover-Increment';
+import ButtonIncrement from '../Component/Screens/BUTTON INCREMENT/Button-Increment';
 
 const Routers = () => (
     <Router>
@@ -18,7 +18,7 @@ const Routers = () => (
             <Route exact component={HoverIncrement} path="/Hover" />
             <Route exact component={ButtonIncrement} path="/Button" />
             <Route exact component={Signup} path="/Signup" />
-            <Route exact component={Dashboard} path="/Dashboard" />
+            <Route exact component={ADDTODO} path="/ADDTODO" />
         </Switch>
     </Router>
 )

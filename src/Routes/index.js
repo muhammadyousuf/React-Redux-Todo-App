@@ -5,8 +5,8 @@ import {
     Switch,
 } from 'react-router-dom';
 
-import Login from '../Component/Screens/Login/Login';
-import Signup from '../Component/Screens/Signup/Signup';
+import Login from '../Component/Screens/Login';
+import Signup from '../Component/Screens/Signup';
 import Dashboard from '../Component/Screens/Dashboard/Dashboard';
 import HoverIncrement from '../Component/Screens/Hover-Increment/Hover-Increment';
 import ButtonIncrement from '../Component/Screens/Button-Increment/Button-Increment';

@@ -2,39 +2,33 @@ import React, { Component } from 'react';
 import {
     Form, Icon, Input, Button, Checkbox,
 } from 'antd';
-import { connect } from 'react-redux';
+
+import {withRouter} from 'react-router-dom';
+import {reset} from '../../Function/function';
 
 
 
 class Login extends Component {
-    reset = () => {
-       this.props.form.resetFields();
-    }
+
     handleSubmit = (e) => {
         e.preventDefault();
         console.log(this.props)
         this.props.form.validateFields((err, values) => {
             if (!err) {
                 console.log('Received values of form: ', values);
-               // this.props.addUser(values);
                let obj = this.props.user.AuthReducer.user
                
                if(obj.email === values.email && obj.password === values.password){
                    let user = obj.firstname+' '+obj.lastname
                    localStorage.setItem('token','abc12345')
                    localStorage.setItem('name',user)
-                   this.reset();
+                   reset(this.props);
                    this.props.history.push('/Dashboard')
                }
             }
         });
     }
-    componentWillReceiveProps() {
-        console.log('PROPS *********', )
-    }
-    componentDidMount(){
-        console.log('user', this.props)
-    }
+    
     render() {
         const { getFieldDecorator } = this.props.form;
         return (
@@ -79,12 +73,6 @@ class Login extends Component {
 }
 
 
-const mapStateToProp = (state) => {
-    console.log('UPADTED STATE', state);
-    return {
-        user: state
-    }
-}
 
 const LoginForm = Form.create({ name: 'normal_login' })(Login);
-export default connect(mapStateToProp)(LoginForm)
+export default withRouter(LoginForm)

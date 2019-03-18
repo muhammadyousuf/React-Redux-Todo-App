@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import {
     Form, Icon, Input, Button,
 } from 'antd';
-import { connect } from 'react-redux';
-import { addUser } from '../../../Redux/Actions/AuthAction';
+import {withRouter} from 'react-router-dom';
+import {reset} from '../../Function/function';
+
 
 class Signup extends Component {
     handleSubmit = (e) => {
@@ -13,6 +14,7 @@ class Signup extends Component {
             if (!err) {
                 console.log('Received values of form: ', values);
                 this.props.addUser(values);
+                reset(this.props)
                 this.props.history.push('/')
             }
         });
@@ -62,19 +64,6 @@ class Signup extends Component {
         );
     }
 }
-const mapStateToProp = (state) => {
-    console.log('UPADTED STATE',state);
-    return {
-       user : state.user
-    }
-}
-
-const mapDispatchToProp = (dispatch) => {
-    return{
-        addUser: (user) => dispatch(addUser(user)) 
-    }
- 
-}
 
 const SignupForm = Form.create({ name: 'normal_login' })(Signup);
-export default connect(mapStateToProp, mapDispatchToProp)(SignupForm) 
+export default withRouter(SignupForm);

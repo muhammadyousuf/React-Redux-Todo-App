@@ -7,7 +7,6 @@ const { Header } = Layout;
 class Navbar extends Component {
     constructor(props) {
         super(props);
-        console.log(props);
         this.state = {
             token: null,
 

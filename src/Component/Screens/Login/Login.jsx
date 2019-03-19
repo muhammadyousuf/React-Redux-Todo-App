@@ -28,8 +28,8 @@ class Login extends Component {
             }
         });
     }
-    signup = () => {
-        console.log("abc")
+    signup = ()  => {
+        window.location = "/Signup";
     }
     render() {
         const { getFieldDecorator } = this.props.form;
@@ -39,11 +39,11 @@ class Login extends Component {
                 <div style={{
                     width: '100',
                     textAlign: 'center',
-                    marginTop:100
+                    marginTop: 100
                 }} >
                     <Card
                         title="User Login"
-                       headStyle={{fontSize:40, fontFamily:'roboto'}}
+                        headStyle={{ fontSize: 40, fontFamily: 'roboto' }}
                         style={{ width: 400, display: 'inline-block' }}
                     >
                         <Form onSubmit={this.handleSubmit} className="login-form">
@@ -82,8 +82,9 @@ class Login extends Component {
                                         Login
           </Button>
                                 </div>
-                                <div onClick={this.signup} className="Register-link"   >
-                                    Register now!</div>
+                                <div  >
+                                    <p onClick={this.signup} className="Register-link">Register Now!</p>
+                                </div>
 
                             </Form.Item>
                         </Form>

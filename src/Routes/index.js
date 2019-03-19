@@ -4,7 +4,7 @@ import {
     Route,
     Switch,
 } from 'react-router-dom';
-
+import { PersistGate } from 'redux-persist/integration/react'
 import Login from '../Component/Screens/Login';
 import Signup from '../Component/Screens/Signup';
 import ADDTODO from '../Component/Screens/ADD TODO';

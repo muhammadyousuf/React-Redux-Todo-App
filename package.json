@@ -31,6 +31,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "react-app-rewired": "^2.1.1"
+    "react-app-rewired": "^2.1.1",
+    "ws": "3.3.2"
   }
 }

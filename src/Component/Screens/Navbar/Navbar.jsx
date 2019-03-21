@@ -25,7 +25,7 @@ class Navbar extends Component {
             this.props.history.push('/Signup')
     }
     List = () => {
-        this.props.history.push('./Signup')
+        this.props.history.push('./TODOLIST')
     }
     add = () => {
         this.props.history.push('./ADDTODO')

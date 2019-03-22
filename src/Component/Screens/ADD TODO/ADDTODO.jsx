@@ -23,9 +23,14 @@ class ADDTODO extends Component {
     this.props.form.validateFields((err, values) => {
       if (!err) {
         console.log("Received values of form: ", values);
-        this.props.addUser(values);
+        let title = values.todo
+        let obj = {
+            title,
+            order: this.state.number
+        }
+        this.props.CreateTodo(obj);
         reset(this.props);
-        this.props.history.push("/");
+        this.props.history.push("/TODOLIST");
       }
     });
   };
@@ -40,7 +45,6 @@ class ADDTODO extends Component {
     this.triggerChange({ number });
   }
   triggerChange = (changedValue) => {
-    // Should provide an event to pass value to Form.
     const onChange = this.props.onChange;
     if (onChange) {
       onChange(Object.assign({}, this.state, changedValue));
@@ -66,8 +70,8 @@ class ADDTODO extends Component {
             headStyle={{ fontSize: 40, fontFamily: "roboto" }}
             style={{ width: 400, display: "inline-block" }}
           >
-            <Form onSubmit={this.handleSubmit} className="login-form">
-              <Form.Item className="Signup-input-box">
+            <Form onSubmit={this.handleSubmit} >
+              <Form.Item >
                 {getFieldDecorator("todo", {
                   rules: [{ required: true, message: "Please add todo!" }]
                 })(
@@ -79,7 +83,8 @@ class ADDTODO extends Component {
                   />
                 )}
               </Form.Item>
-              <Form.Item className="Signup-input-box">
+              <Form.Item >
+                  
                 <Input
                   type="text"
                   size={size}
@@ -92,7 +97,6 @@ class ADDTODO extends Component {
                 <Button
                   type="primary"
                   htmlType="submit"
-                  className="login-form-button"
                 >
                   ADD TODO
                 </Button>

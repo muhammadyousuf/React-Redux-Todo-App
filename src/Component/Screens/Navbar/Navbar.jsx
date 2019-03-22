@@ -30,6 +30,10 @@ class Navbar extends Component {
     add = () => {
         this.props.history.push('./ADDTODO')
     }
+    logout = () => {
+        this.props.history.replace('/');
+        localStorage.clear();
+    }
 
     render() {
         return (
@@ -54,6 +58,7 @@ class Navbar extends Component {
                             >
                                 <Menu.Item key="1" onClick={this.List} >LIST</Menu.Item>
                                 <Menu.Item key="2" onClick={this.add} >ADD TODO</Menu.Item>
+                                <Menu.Item key="3" onClick={this.logout} >Logout</Menu.Item>
                             </Menu>
 
                     }

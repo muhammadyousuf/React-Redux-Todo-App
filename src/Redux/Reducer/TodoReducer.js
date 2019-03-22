@@ -1,6 +1,7 @@
 import {
     GET_TODOS_SUCCESS,
-    CREATE_TODO_SUCCESS
+    CREATE_TODO_SUCCESS,
+    DELETE_TODO_SUCCESS
     
 } from '../Actions/TodoAction';
 
@@ -14,6 +15,9 @@ const Todos = (state = '',action)=>{
             return action.resData
             
         }
+        case DELETE_TODO_SUCCESS: {
+            return [...state];
+          }
        
         default:
             return state

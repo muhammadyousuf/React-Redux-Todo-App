@@ -1,6 +1,6 @@
 import TODOLIST from './TODOLIST';
 import { connect } from 'react-redux';
-import {GetTodos} from '../../../Redux/Actions/TodoAction';
+import {GetTodos, DeleteTodo} from '../../../Redux/Actions/TodoAction';
 const mapStateToProp = (state) => {
     console.log('UPADTED STATE', state);
     return {
@@ -9,7 +9,8 @@ const mapStateToProp = (state) => {
 }
 const mapDispatchToProp = (dispatch) => {
     return{
-        GetTodos: () => dispatch(GetTodos()) 
+        GetTodos: () => dispatch(GetTodos()) ,
+        DeleteTodo: (todoId) => dispatch(DeleteTodo(todoId)),
     }
  
 }

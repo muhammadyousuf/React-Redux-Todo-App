@@ -3,6 +3,7 @@ import {Constant} from '../../Constant/Constant';
 
 export const GET_TODOS_SUCCESS = '[Todo] GET_TODOS_SUCCESS' 
 export const CREATE_TODO_SUCCESS = '[Todo] CREATE_TODO_SUCCESS';
+export const DELETE_TODO_SUCCESS = '[Todo] DELETE_TODO_SUCCESS';
 
 
 const axios = require('axios');
@@ -37,6 +38,24 @@ export const CreateTodo = todo => dispatch => {
     .then(response => {
       console.log(response.data)
       dispatch({ type: CREATE_TODO_SUCCESS, todo: response.data });
+    })
+    .catch(error => {
+      console.log(error);
+    });
+};
+export const DeleteTodo = (todoId) => dispatch => {
+  console.log(todoId);
+  axios({
+    method: 'DELETE',
+    url: Constant.url + todoId,
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+    },
+  })
+    .then(response => {
+      dispatch({ type: DELETE_TODO_SUCCESS });
+      window.location = "/TODOLIST";
     })
     .catch(error => {
       console.log(error);

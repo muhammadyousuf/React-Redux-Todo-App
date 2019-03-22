@@ -7,7 +7,7 @@ function mapStateToProps(state) {
   }
 const mapDispatchToProp = (dispatch) => {
     return{
-        CreateTodo: (user) => dispatch(CreateTodo(user)) 
+        CreateTodo: (todo) => dispatch(CreateTodo(todo)) 
     }
  
 }

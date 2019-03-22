@@ -1,51 +1,55 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 import Navbar from '../Navbar/Navbar';
-import { Table} from "antd";
+import { Table, Popconfirm} from "antd";
 
-const columns = [
-  {
-    title: "ID",
-    dataIndex: "id",
-    key: "name",
-   
-  },
-  {
-    title: "TITLE",
-    dataIndex: "title",
-    key: "title",
-   
-  },
-  {
-    title: "ORDER",
-    dataIndex: "order",
-    key: "order",
-   
-  },
 
-  {
-    title: "DELETE",
-    key: "action",
-    render: (text, record) => (
-      <span>
-        {/* {console.log(record.id)} */}
-        <a  >Delete</a>
-      </span>
-    )
-  }
-];
 
 class TODOLIST extends React.Component {
   constructor(props) {
     super(props);
-    this.delete = this.handleDelete.bind(this);
+
     const { GetTodos } = this.props;
     GetTodos();
-  }
+  
+ this.columns = [
+    {
+      title: "ID",
+      dataIndex: "id",
+      key: "name",
+     
+    },
+    {
+      title: "TITLE",
+      dataIndex: "title",
+      key: "title",
+     
+    },
+    {
+      title: "ORDER",
+      dataIndex: "order",
+      key: "order",
+     
+    },
+  
+    {
+      title: "DELETE",
+      key: "action",
+      render: (text, record) => (
+        <Popconfirm
+              title="Sure to delete?"
+              onConfirm={() => this.handleDelete(record)}
+            >
+              <a href="javascript:;">Delete</a>
+            </Popconfirm>
+      )
+    }
+  ];
+}
   handleDelete(todoId){
-    // const { DeleteTodo, history } = this.props;
-    // DeleteTodo(todoId.id, history);
- //   console.log('todo', todoId)
+     const { DeleteTodo} = this.props;
+     DeleteTodo(todoId.id);
+   console.log('todo', todoId.id)
   }
 
   render() {
@@ -54,7 +58,7 @@ class TODOLIST extends React.Component {
     return (
       <div>
         <Navbar />
-        <Table columns={columns} dataSource={Todo} rowKey='id' />
+        <Table columns={this.columns} dataSource={Todo} rowKey='id' />
       </div>
     );
   }

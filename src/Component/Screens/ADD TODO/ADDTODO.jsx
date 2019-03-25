@@ -76,8 +76,9 @@ class ADDTODO extends Component {
                   rules: [{ required: true, message: "Please add todo!" }]
                 })(
                   <Input
+                  id="normal_todo_todo"
                     prefix={
-                      <Icon type="form" style={{ color: "rgba(0,0,0,.25)" }} />
+                      <Icon type="form" style={{ color: "rgba(0,0,0,.25)" }}  />
                     }
                     placeholder="TODO"
                   />
@@ -91,11 +92,13 @@ class ADDTODO extends Component {
                   value={state.number}
                   onChange={this.handleNumberChange}
                   style={{ width: "100%", marginRight: "3%" }}
+                  id="order"
                 />
               </Form.Item>
               <Form.Item>
                 <Button
                   type="primary"
+                  className="todo-form-button"
                   htmlType="submit"
                 >
                   ADD TODO

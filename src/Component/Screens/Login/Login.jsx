@@ -18,10 +18,11 @@ class Login extends Component {
                 console.log('Received values of form: ', values);
                 let obj = this.props.user.AuthReducer.user
 
-                if (obj.email === values.email && obj.password === values.password) {
-                    let user = obj.firstname + ' ' + obj.lastname
+               // if (obj.email === values.email && obj.password === values.password) {
+                if ("muhammadyousuf@gmail.com" === values.email && "123456" === values.password) {
+               //     let user = obj.firstname + ' ' + obj.lastname
                     localStorage.setItem('token', 'abc12345')
-                    localStorage.setItem('name', user)
+                   // localStorage.setItem('name', user)
                     reset(this.props);
                     this.props.history.push('/ADDTODO')
                 }
@@ -35,12 +36,14 @@ class Login extends Component {
         const { getFieldDecorator } = this.props.form;
         return (
             <div >
+            
                 <Navbar />
                 <div style={{
                     width: '100',
                     textAlign: 'center',
                     marginTop: 100
                 }} >
+              
                     <Card
                         title="User Login"
                         headStyle={{ fontSize: 40, fontFamily: 'roboto' }}
@@ -54,7 +57,7 @@ class Login extends Component {
                                         {getFieldDecorator('email', {
                                             rules: [{ required: true, message: 'Please input your email!' }],
                                         })(
-                                            <Input prefix={<Icon type="fund" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="email" />
+                                            <Input id="normal_login_email" prefix={<Icon type="fund" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="email" />
                                         )}
                                     </Form.Item>
                                 </Col>
@@ -64,7 +67,7 @@ class Login extends Component {
                                 {getFieldDecorator('password', {
                                     rules: [{ required: true, message: 'Please input your Password!' }],
                                 })(
-                                    <Input prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />} type="password" placeholder="Password" />
+                                    <Input id="normal_login_password" prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />} type="password" placeholder="Password" />
                                 )}
                             </Form.Item>
                             <Form.Item >
@@ -78,7 +81,7 @@ class Login extends Component {
                                     <a className="login-form-forgot" href="/Login">Forgot password</a>
                                 </div>
                                 <div>
-                                    <Button type="primary" htmlType="submit" className="login-form-button">
+                                    <Button type="primary" htmlType="submit" className="login-form-button loginbtn ">
                                         Login
           </Button>
                                 </div>

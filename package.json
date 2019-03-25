@@ -19,7 +19,6 @@
   "scripts": {
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
-    "test": "react-app-rewired test --env=jsdom",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -32,6 +31,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "cypress": "^3.2.0",
     "react-app-rewired": "^2.1.1",
     "ws": "3.3.2"
   }

@@ -1,0 +1,15 @@
+describe('Signup ', function () {
+    it('visit the Signup screen', function () {
+     cy.visit('/Signup') 
+     cy.get('#normal_login_firstname').type('muhammad')
+     .should('have.value','muhammad').click()
+     cy.get('#normal_login_lastname').type('yousuf')
+     .should('have.value','yousuf').click()
+     cy.get('#normal_login_email').type('muhammadyousuf@gmail.com')
+     .should('have.value','muhammadyousuf@gmail.com').click()
+     cy.get('#normal_login_password').type('123456')
+     .should('have.value','123456').click()
+     cy.get('.loginbtn')
+     .click()    
+    })
+})

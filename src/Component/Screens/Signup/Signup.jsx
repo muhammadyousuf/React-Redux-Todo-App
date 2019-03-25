@@ -43,32 +43,32 @@ class Signup extends Component {
                                 {getFieldDecorator('firstname', {
                                     rules: [{ required: true, message: 'Please input your first name!' }],
                                 })(
-                                    <Input prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="First Name" />
+                                    <Input id="normal_login_firstname" prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="First Name" />
                                 )}
                             </Form.Item>
                             <Form.Item className="Signup-input-box" >
                                 {getFieldDecorator('lastname', {
                                     rules: [{ required: true, message: 'Please input your last name!' }],
                                 })(
-                                    <Input prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="Last Name" />
+                                    <Input id="normal_login_lastname" prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="Last Name" />
                                 )}
                             </Form.Item>
                             <Form.Item className="Signup-input-box" >
                                 {getFieldDecorator('email', {
                                     rules: [{ required: true, message: 'Please input your email!' }],
                                 })(
-                                    <Input prefix={<Icon type="fund" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="email" />
+                                    <Input id="normal_login_email" prefix={<Icon type="fund" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="email" />
                                 )}
                             </Form.Item>
                             <Form.Item className="Signup-input-box" >
                                 {getFieldDecorator('password', {
                                     rules: [{ required: true, message: 'Please input your Password!' }],
                                 })(
-                                    <Input prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />} type="password" placeholder="Password" />
+                                    <Input id="normal_login_password" prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />} type="password" placeholder="Password" />
                                 )}
                             </Form.Item>
                             <Form.Item>
-                                <Button type="primary" htmlType="submit" className="login-form-button">
+                                <Button type="primary" htmlType="submit" className="login-form-button loginbtn">
                                     Register
           </Button>
                                 <div> <a href="/">Login Here!</a></div>

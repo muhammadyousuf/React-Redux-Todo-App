@@ -1,9 +1,7 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
-import Navbar from '../Navbar/Navbar';
+import Navbar from "../Navbar/Navbar";
 import { Table, Popconfirm } from "antd";
-
-
 
 class TODOLIST extends React.Component {
   constructor(props) {
@@ -16,20 +14,17 @@ class TODOLIST extends React.Component {
       {
         title: "ID",
         dataIndex: "id",
-        key: "name",
-
+        key: "name"
       },
       {
         title: "TITLE",
         dataIndex: "title",
-        key: "title",
-
+        key: "title"
       },
       {
         title: "ORDER",
         dataIndex: "order",
-        key: "order",
-
+        key: "order"
       },
 
       {
@@ -57,7 +52,7 @@ class TODOLIST extends React.Component {
     return (
       <div>
         <Navbar />
-        <Table columns={this.columns} dataSource={Todo} rowKey='id' />
+        <Table columns={this.columns} dataSource={Todo} rowKey="id" />
       </div>
     );
   }

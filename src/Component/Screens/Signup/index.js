@@ -1,18 +1,19 @@
-import { connect } from 'react-redux';
-import { addUser } from '../../../Redux/Actions/AuthAction';
-import Signup from './Signup';
+import { connect } from "react-redux";
+import { addUser } from "../../../Redux/Actions/AuthAction";
+import Signup from "./Signup";
 
-function mapStateToProp(state){
-   console.log('UPADTED STATE',state);
-    return {
-       user : state.user
-    }
+function mapStateToProp(state) {
+  return {
+    user: state.user
+  };
 }
 
-const mapDispatchToProp = (dispatch) => {
-    return{
-        addUser: (user) => dispatch(addUser(user)) 
-    }
- 
-}
-export default connect(mapStateToProp, mapDispatchToProp)(Signup) 
+const mapDispatchToProp = dispatch => {
+  return {
+    addUser: user => dispatch(addUser(user))
+  };
+};
+export default connect(
+  mapStateToProp,
+  mapDispatchToProp
+)(Signup);

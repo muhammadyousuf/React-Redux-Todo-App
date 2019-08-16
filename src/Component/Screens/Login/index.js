@@ -3,7 +3,6 @@ import Login from './Login';
 
 
 const mapStateToProp = (state) => {
-    console.log('UPADTED STATE', state);
     return {
         user: state
     }

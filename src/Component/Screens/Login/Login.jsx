@@ -15,11 +15,7 @@ class Login extends Component {
         console.log(this.props)
         this.props.form.validateFields((err, values) => {
             if (!err) {
-                console.log('Received values of form: ', values);
-
-               // if (obj.email === values.email && obj.password === values.password) {
                 if ("muhammadyousuf@gmail.com" === values.email && "123456" === values.password) {
-               //     let user = obj.firstname + ' ' + obj.lastname
                     localStorage.setItem('token', 'abc12345')
                     reset(this.props);
                     this.props.history.push('/ADDTODO')

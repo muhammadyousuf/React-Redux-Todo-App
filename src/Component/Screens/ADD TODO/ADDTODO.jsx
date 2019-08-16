@@ -14,15 +14,12 @@ class ADDTODO extends Component {
           currency: value.currency || 'rmb',
         };
       }
-  componentDidMount() {
-    console.log("user", this.props);
-  }
+ 
   handleSubmit = e => {
     e.preventDefault();
     console.log(this.props);
     this.props.form.validateFields((err, values) => {
       if (!err) {
-        console.log("Received values of form: ", values);
         let title = values.todo
         let obj = {
             title,
